@@ -30,6 +30,10 @@ export class Meta {
   private readonly date: Date;
 
   constructor(inputs: Inputs, context: Context, repo: ReposGetResponseData) {
+    if (inputs.ref) {
+      context.ref = inputs.ref
+    }
+
     // Needs to override Git reference with pr ref instead of upstream branch ref
     // for pull_request_target event
     // https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request_target

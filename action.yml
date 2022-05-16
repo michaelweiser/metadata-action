@@ -13,6 +13,10 @@ inputs:
   tags:
     description: 'List of tags as key-value pair attributes'
     required: false
+  ref:
+    description: 'Ref to use instead of github.ref'
+    required: false
+    default: ${{ github.ref }}
   flavor:
     description: 'Flavors to apply'
     required: false

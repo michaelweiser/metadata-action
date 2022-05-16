@@ -16,6 +16,7 @@ export interface Inputs {
   sepLabels: string;
   bakeTarget: string;
   githubToken: string;
+  ref: string;
 }
 
 export function tmpDir(): string {
@@ -34,7 +35,8 @@ export function getInputs(): Inputs {
     sepTags: core.getInput('sep-tags') || `\n`,
     sepLabels: core.getInput('sep-labels') || `\n`,
     bakeTarget: core.getInput('bake-target') || `docker-metadata-action`,
-    githubToken: core.getInput('github-token')
+    githubToken: core.getInput('github-token'),
+    ref: core.getInput('ref')
   };
 }
 
